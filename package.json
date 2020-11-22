@@ -20,5 +20,6 @@
   "bugs": {
     "url": "https://github.com/hvrclls/inheridpak/issues"
   },
-  "homepage": "https://github.com/hvrclls/inheridpak#readme"
+  "homepage": "https://github.com/hvrclls/inheridpak#readme",
+  "devDependencies": {}
 }

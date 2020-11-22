@@ -1,14 +1,21 @@
-const express = require("express")
-const path = require("path")
+const express = require("express");
 
-const app = express()
+const app = express();
+const PORT = process.env.PORT || 3000;
 
-const PORT = process.env.PORT || 3030
+app.use(express.static("public"))
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
-app.use(express.urlencoded({ extended: true}))
-app.use(express.json())
-
-
-app.listen(PORT, function() {
-    console.log("App is listening on PORT: " + PORT)
+app.get("/", function(req, res){
+    res.sendFile(path.join(__dirname, "public/index.html"))
 })
+
+app.get("notes", function(req, res){
+  res.sendFile(path.join(__dirname, "public/notes.html"))
+})
+
+app.listen(PORT, function () {
+  console.log("App is listening on PORT: " + PORT);
+});
+
